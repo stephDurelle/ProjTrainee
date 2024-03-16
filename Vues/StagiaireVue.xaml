@@ -1,0 +1,215 @@
+﻿<UserControl
+    x:Class="MonStagiaire.Vues.StagiaireVue"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MonStagiaire.Vues"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:MonStagiaire.UserControls"
+    d:DesignWidth="800"
+    mc:Ignorable="d" Height="704">
+    <Grid Width="{Binding ElementName=MainFram, Path=ActualWidth}" Height="{Binding ElementName=MainFram, Path=ActualHeight}">
+
+        <!--  MON DEUXIEME ESSAI DE FORMULAIRE  -->
+
+        <Border
+            Grid.Row="1"
+            Background="#f2f5f8"
+            CornerRadius="0,0,0,5">
+            <Grid
+                Height="630"
+                Margin="70,47,70,0"
+                VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="83*" />
+                    <ColumnDefinition Width="82*"/>
+                    <!--<ColumnDefinition Width="259*"/>-->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="500" />
+
+                </Grid.RowDefinitions>
+
+                <Border
+                    Grid.ColumnSpan="2"
+                    Height="50"
+                    Margin="40,-10,60,0"
+                    VerticalAlignment="Top"
+                    Background="#f7f8fb"
+                    CornerRadius="25" />
+                <Border
+                    Grid.ColumnSpan="2"
+                    Height="50"
+                    Margin="40,-5,60,0"
+                    VerticalAlignment="Top"
+                    Background="#fdfdfd"
+                    CornerRadius="25" />
+
+                <!--  Main vue  -->
+                <Border
+                    Background="#ffff"
+                    CornerRadius="55" Margin="0,40,0,-137" Grid.ColumnSpan="2">
+                    <Border.Effect>
+                        <DropShadowEffect
+                            BlurRadius="3"
+                            Direction="-130"
+                            Opacity="0.1"
+                            ShadowDepth="5" />
+                    </Border.Effect>
+
+                    <Grid
+                        Height="526"
+                        Margin="20,0,10,0"
+                        VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!--  Titre du formulaire  -->
+                        <StackPanel Margin="20,20,0,0" Orientation="Horizontal">
+                            <Border
+                                BorderBrush="#efefef"
+                                BorderThickness="1.5"
+                                CornerRadius="50">
+                                <Ellipse Width="40" Height="40">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="/Images/image1.jpg" />
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <TextBlock
+                                Margin="15,0,0,0"
+                                VerticalAlignment="Center"
+                                FontSize="18"
+                                Foreground="#374655"
+                                Text="Details Stagiaire" />
+                        </StackPanel>
+                        <!--  niveau de pourcentage du formulaire  -->
+
+                        <StackPanel
+                            Grid.Column="1"
+                            Margin="0,20,20,0"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                            <Border
+                                Width="30"
+                                Height="30"
+                                BorderThickness="3"
+                                CornerRadius="50">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0" Color="#4880ff" />
+                                        <GradientStop Offset="0.4" Color="#ffff" />
+
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
+                            </Border>
+
+                            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                                <TextBlock
+                                    FontSize="14"
+                                    FontWeight="SemiBold"
+                                    Foreground="#4880ff"
+                                    Text="10%" />
+                                <TextBlock
+                                    Margin="0,2,0,0"
+                                    Foreground="#97a5b4"
+                                    Text="Etat du Profil" />
+                            </StackPanel>
+                        </StackPanel>
+                        <Separator
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Height="0.7"
+                            Margin="-20,20"
+                            Background="#e1e6eb" />
+                        <!--  Je suis ici  -->
+
+                        <StackPanel
+                            Grid.Row="2"
+                            Grid.RowSpan="3"
+                            Grid.ColumnSpan="2"
+                            Margin="20,0,20,-50">
+
+                            <Label Content="Nom: " FontSize="12" FontWeight="Black"/>
+                            <TextBox
+                                x:Name="txtnom"
+                                 Margin="0,0,0,10"
+                                 BorderBrush="#d1d7dc"
+                                BorderThickness="1"  Height="26"  GotFocus="TextBox_GotFocus"  />
+
+
+                            <Label FontSize="12" FontWeight="Black">Prénom:</Label>
+                            <TextBox
+                                x:Name="txtPrenom"
+                                Margin="0,0,0,10"
+                                BorderBrush="#d1d7dc"
+                                BorderThickness="1"  Height="26"  GotFocus="TextBox_GotFocus"/>
+
+                            <Label FontSize="12" FontWeight="Black">Numéro d'étudiant:</Label>
+                            <TextBox
+                                x:Name="txtNumeroEtudiant"
+                                BorderBrush="#d1d7dc"
+                                BorderThickness="1"  Height="26"  GotFocus="TextBox_GotFocus" />
+
+                            <Label FontSize="12" FontWeight="Black">Date d'anniversaire:</Label>
+                            <DatePicker
+                                x:Name="dpDateAnniversaire"
+                                Margin="0,0,0,10"
+                                BorderBrush="#d1d7dc"
+                                BorderThickness="1" GotFocus="TextBox_GotFocus" />
+
+                            <Label FontSize="12" FontWeight="Black">Sexe:</Label>
+                            <ComboBox
+                                x:Name="cmbSexe"
+                                Margin="0,0,0,10"
+                                BorderBrush="#d1d7dc"
+                                BorderThickness="1">
+                                <ComboBoxItem>Homme</ComboBoxItem>
+                                <ComboBoxItem>Femme</ComboBoxItem>
+                                <ComboBoxItem>Autre</ComboBoxItem>
+                            </ComboBox>
+                            <Label FontSize="12" FontWeight="Black">Nom du programme:</Label>
+                            <ComboBox
+                                x:Name="cmbNomProgramme"
+                                Margin="0,0,0,10"
+                                BorderBrush="#d1d7dc"
+                                BorderThickness="1">
+                                <ComboBoxItem>Programmation informatique</ComboBoxItem>
+                                <ComboBoxItem>Administration des affaires</ComboBoxItem>
+                                <ComboBoxItem>Soins infirmiers</ComboBoxItem>
+                            </ComboBox>
+                            
+
+                            <Button
+                                Margin="0,30,0,0"
+                                HorizontalAlignment="Center"
+                                Click="BtnEnregistrer_Click"
+                                Content="Enregistrer" />
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="CaretBrush" Value="Black" />
+        </Style>
+    </UserControl.Resources>
+
+</UserControl>

@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="MonStagiaire.UserControls.DesignB"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="Options"
+    Foreground="#ffff">
+    <Border
+        Margin="30,4"
+        Background="#598bff"
+        BorderThickness="1"
+        CornerRadius="7">
+
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="BorderBrush" Value="Transparent" />
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="#fff" />
+                    </Trigger>
+
+                    <DataTrigger Binding="{Binding ElementName=Options, Path=IsActive}" Value="True">
+                        <Setter Property="BorderBrush" Value="#fff" />
+                    </DataTrigger>
+
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="135" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                Width="45"
+                Height="45"
+                Margin="20,10,20,10"
+                Background="#fff"
+                CornerRadius="50">
+                <Ellipse Width="42" Height="42">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="{Binding ElementName=Options, Path=Image}" Stretch="UniformToFill" />
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Border>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <TextBlock FontSize="14" Text="{Binding ElementName=Options, Path=Title}" />
+            </StackPanel>
+
+            <Border
+                Grid.Column="2"
+                Width="25"
+                Height="25"
+                VerticalAlignment="Center"
+                Background="#4880ff"
+                CornerRadius="50">
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="10"
+                    Text="{Binding ElementName=Options, Path=Number}" />
+            </Border>
+
+        </Grid>
+
+    </Border>
+
+</UserControl>
